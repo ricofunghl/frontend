@@ -1,13 +1,14 @@
 import React from 'react';
 import Base from '../../components/Base/Base';
-import Login from '../Login/Login';
+import {BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Base />
-      <Login />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Base />
+      </div>
+    </BrowserRouter>
   );
 }
 

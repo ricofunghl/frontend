@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import Card from '../../components/UI/Card/Card';
 import TextField from '../../components/UI/TextField/TextField';
+import classes from './Login.module.css';
 
 class Login extends Component {
     state = {
@@ -27,10 +28,12 @@ class Login extends Component {
 
     render () {
         return (
-            <Card title="Please Log In">
-                <TextField name='username' label='Username' onChange={this.onChangeHandler} value={this.state.loginForm.username} />
-                <TextField name='password' label='Password' onChange={this.onChangeHandler}  value={this.state.loginForm.password} />
-            </Card>
+            <div className={classes.Login}>
+                <Card title="Please Log In">
+                    <TextField name='username' label='Username' onChange={this.onChangeHandler} value={this.state.loginForm.username} />
+                    <TextField name='password' label='Password' onChange={this.onChangeHandler}  value={this.state.loginForm.password} />
+                </Card>
+            </div>
         );
     }
 }
