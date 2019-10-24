@@ -6,6 +6,8 @@ class Base extends Component {
         return (
             <Fragment>
                 <AppBar />
+                body
+                some footer
             </Fragment>
             
         )

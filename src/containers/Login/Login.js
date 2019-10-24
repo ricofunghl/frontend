@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { Card, CardHeader, CardContent } from '@material-ui/core';
+import Card from '../../components/UI/Card/Card';
 import TextField from '../../components/UI/TextField/TextField';
 
 class Login extends Component {
@@ -17,19 +17,19 @@ class Login extends Component {
         
         const updatedLoginForm = {...this.state.loginForm}
 
-        
+        updatedLoginForm[evt.target.name] = evt.target.value;
+        this.setState(
+            {
+                loginForm : updatedLoginForm
+            }
+        )
     }
 
     render () {
         return (
-            <Card>
-                <CardHeader>
-                    title = 'Please Log In'
-                </CardHeader>
-                <CardContent>
-                    <TextField name='username' label='Username' onChange={this.onChangeHandler} value={this.state.loginForm.username} />
-                    <TextField name='password' label='Password' onChange={this.onChangeHandler}  value={this.state.loginForm.password} />
-                </CardContent>
+            <Card title="Please Log In">
+                <TextField name='username' label='Username' onChange={this.onChangeHandler} value={this.state.loginForm.username} />
+                <TextField name='password' label='Password' onChange={this.onChangeHandler}  value={this.state.loginForm.password} />
             </Card>
         );
     }
